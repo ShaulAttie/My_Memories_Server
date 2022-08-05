@@ -14,6 +14,6 @@ router.post("/", auth, postController.createPost)
 router.patch("/:id", auth, postController.updatePost)
 router.delete("/:id", auth, postController.deletePost)
 router.patch("/:id/likePost", auth, postController.likePost)
-// router.post('/:id/commentPost',commentPost)
+router.post('/:id/commentPost',auth, postController.commentPost)
 
 module.exports = router

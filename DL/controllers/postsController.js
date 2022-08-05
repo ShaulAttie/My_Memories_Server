@@ -36,10 +36,10 @@ const getPostsBySearch = async (req, res) => {
 const getPost = async (req, res) => {
     // console.log("req.params ", req.params);
     const { id } = req.params
-    console.log("_ID00 ", id);
+    // console.log("_ID00 ", id);
     try {
         const post = await PostMessage.findById(id)
-        console.log("post00", post);
+        // console.log("post00", post);
         res.status(200).json(post)
 
     } catch (error) {
@@ -111,17 +111,17 @@ const deletePost = async (req, res) => {
     }
 }
 
-// const commentPost = async (req, res) => {
-//     const { id } = req.params;
-//     const { value } = req.body;
+const commentPost = async (req, res) => {
+    const { id } = req.params;
+    const { value } = req.body;
 
-//     const post = await PostMessage.findById(id);
+    const post = await PostMessage.findById(id);
 
-//     post.comments.push(value);
+    post.comments.push(value);
 
-//     const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
 
-//     res.json(updatedPost);
-// };
+    res.json(updatedPost);
+};
 
-module.exports = { getPost, getPostsBySearch, getPosts, createPost, updatePost, likePost, deletePost } 
+module.exports = { commentPost, getPost, getPostsBySearch, getPosts, createPost, updatePost, likePost, deletePost } 
