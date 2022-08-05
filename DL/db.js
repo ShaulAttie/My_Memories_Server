@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const MONGO_PASS = process.env.MONGO_PASS || "Soly1980"
+const MONGO_PASS = process.env.MONGO_PASS
 const MONGO_URL = `mongodb+srv://ShaulAttie:${MONGO_PASS}@cluster0.jfcbcdn.mongodb.net/memories?retryWrites=true&w=majority`
 
 const connect = async () => {

@@ -4,16 +4,17 @@ const postSchema = new mongoose.Schema({
     title: String,
     message: String,
     creator: String,
+    name: String,
     tags: [String],
     selectedFile: String, //will be translated using base64
-    likeCount: {
-        type: Number,
-        default: 0
+    likes: {
+        type: [String],
+        default: [],
     },
     createAt: {
         type: Date,
-        default: new Date()
-    }
+        default: new Date(),
+    },
 })
 
 const PostMessage = mongoose.model("PostMessage", postSchema);
