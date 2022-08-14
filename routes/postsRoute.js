@@ -1,4 +1,3 @@
-const { Router } = require("express")
 const express = require("express")
 const router = express.Router()
 
@@ -7,6 +6,7 @@ const postController = require("../DL/controllers/postsController.js")
 const {auth} = require("../middleware/auth.js")
 
 router.get("/search", postController.getPostsBySearch)
+router.get("/creator", postController.getPostsByCreator);
 router.get("/", postController.getPosts)
 router.get("/:id", postController.getPost)
 
