@@ -6,7 +6,7 @@ const auth = async (req, res, next) => {
         const token = req.headers.authorization.split(" ")[1]
 
         const isCustomAuth = token.length < 500 // google token has more than 500 charts
-
+console.log(token , isCustomAuth);
         let decodedData
 
         if (token && isCustomAuth) {

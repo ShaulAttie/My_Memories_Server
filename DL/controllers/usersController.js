@@ -19,7 +19,7 @@ const signin = async (req, res) => {
         if (!isPasswordCorrect) return res.status(400).json({ message: "Incorrect Password." })
 
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, JWT_SECRET, { }) //{},20d,10m, 120(ms)
-
+console.log(token);
         res.status(200).json({ result: existingUser, token })
 
     } catch (error) {
