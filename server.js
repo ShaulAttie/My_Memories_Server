@@ -16,6 +16,10 @@ PORT = process.env.PORT || 5000
 const mainRouter = require("./routes/index")
 app.use("/api", mainRouter )
 
+app.get('/', (req,res) => {
+    res.send('APP IS RUNNING')
+})
+
 require("./DL/db").connect()
 
 app.listen(PORT, ()=> console.log(`Server is running at Port ${PORT}`))
